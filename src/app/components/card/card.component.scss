@@ -1,0 +1,41 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors";
+@import "../../../styles/mixins";
+
+:host {
+  display: block;
+  width: 20rem;
+  height: 25rem;
+  background: $ezy-white;
+  overflow: hidden;
+}
+
+.ezy {
+
+  &-preview {
+    display: flex;
+    justify-content: center;
+    background: $ezy-black;
+
+    &-picture {
+      height: 14rem;
+      width: 100%;
+    }
+  }
+
+  &-content {
+    padding: 8px 28px 20px 28px;
+
+    h4 {
+      margin-top: 4px;
+      margin-bottom: 7px;
+      @include ezy-limit-lines( $ezy-default-line-height, 2, $ezy-white );
+    }
+
+    p {
+      margin: 0;
+      @include ezy-limit-lines( $ezy-default-line-height, 3, $ezy-white );
+    }
+
+  }
+}

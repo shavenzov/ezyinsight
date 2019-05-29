@@ -1,0 +1,29 @@
+html {
+  font-size: $ezy-rem-size;
+}
+
+body {
+  font: $ezy-default-font-weight $ezy-default-font-size $ezy-default-font-name;
+  color: $ezy-gray;
+  background: $ezy-gray-lightest;
+  line-height: $ezy-default-line-height;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  color: $ezy-gray-darkest;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+p {
+  color: $ezy-gray;
+}
