@@ -1,15 +1,24 @@
 @import "../../../styles/colors";
 
+$ezy-toolbar-z-index: 100;
+
 :host {
-  display: flex;
   position: sticky;
-  align-items: center;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  right: 0;
+  z-index: $ezy-toolbar-z-index;
+}
+
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
   height: 81px;
   background: $ezy-white;
   box-shadow: 0px 2px 4px $ezy-gray-light;
   padding: 0 25px;
+  z-index: $ezy-toolbar-z-index + 1;
 }
 
 // logo width
@@ -48,6 +57,22 @@ $ezy-logo-margin-bottom: 6px;
     }
   }
 
+  &-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    background: $ezy-white;
+    height: 245px;
+    width: 100%;
+
+    &-controls {
+      margin: 28px 21px;
+      background: orange;
+    }
+  }
+}
+
+ezy-filters-button {
+  margin-left: 36px;
 }
 
 

@@ -1,0 +1,24 @@
+/*
+Content variables
+ */
+$my-accordion-content-margin: 0.5rem;
+
+.my-accordion {
+  display: block;
+  cursor: default;
+
+  &-content {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    > section {
+      all: unset;
+      display: inline-block;
+      margin: $my-accordion-content-margin;
+    }
+  }
+}
