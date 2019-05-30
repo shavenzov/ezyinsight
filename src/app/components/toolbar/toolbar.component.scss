@@ -2,10 +2,10 @@
 
 :host {
   display: flex;
-  position: fixed;
+  position: sticky;
   align-items: center;
-  left: 0;
-  right: 0;
+  top: 0;
+  z-index: 1000;
   height: 81px;
   background: $ezy-white;
   box-shadow: 0px 2px 4px $ezy-gray-light;

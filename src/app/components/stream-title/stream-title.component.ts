@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ezy-stream-title',
   templateUrl: './stream-title.component.html',
   styleUrls: ['./stream-title.component.scss']
 })
-export class StreamTitleComponent implements OnInit {
+export class StreamTitleComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  /**
+   * Stream source logo url
+   */
+  @Input()
+  logoUrl;
 
 }

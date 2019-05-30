@@ -6,6 +6,8 @@
   display: block;
   width: 20rem;
   height: 25rem;
+  min-width: 20rem;
+  min-height: 25rem;
   background: $ezy-white;
   overflow: hidden;
 }

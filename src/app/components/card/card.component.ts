@@ -1,15 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ezy-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
-  constructor() { }
+  /**
+   * News image url
+   */
+  @Input()
+  imageUrl;
 
-  ngOnInit() {
-  }
+  /**
+   * Stream source logo url
+   */
+  @Input()
+  streamLogoUrl;
+
+  /**
+   * Stream source name
+   */
+  @Input()
+  streamName;
+
+  /**
+   * News title text
+   */
+  @Input()
+  header;
 
 }

@@ -1,13 +1,12 @@
 <div class="ezy-preview">
-  <img class="ezy-preview-picture" src="https://www.guinnessworldrecords.com/Images/Maru_tcm25-466616.jpg">
+  <img class="ezy-preview-picture" [src]="imageUrl">
 </div>
 <div class="ezy-content">
-  <ezy-stream-title>Business Insider UK</ezy-stream-title>
+  <ezy-stream-title [logoUrl]="streamLogoUrl">{{streamName}}</ezy-stream-title>
   <h4>
-    Supermarket to introduce
+    {{header}}
   </h4>
   <p>
-    The Trump administration is considering payments of $2 per bushel for soybeans, 63 cents per bushel for wheat and
-    The Trump administration is considering payments of $2 per bushel for soybeans, 63 cents per bushel for wheat and
+    <ng-content></ng-content>
   </p>
 </div>
