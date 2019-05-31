@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'ezy-toolbar',
@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
+
+  panelExpanded = true;
+
+
+
+  changePanelState( value: boolean ): void {
+    this.panelExpanded = value;
+  }
+
 }

@@ -1,0 +1,25 @@
+<div class="my-slider-control">
+  <div class="my-slider-control-track" #track></div>
+  <div class="my-slider-control-track-selected" #selector *ngIf="!disabled"></div>
+  <div class="my-slider-control-thumb"
+       [class.my-slider-control-thumb-disabled]="disabled"
+       mySliderThumb>
+  </div>
+  <div class="my-slider-control-thumb"
+       [class.my-slider-control-thumb-disabled]="disabled"
+       mySliderThumb
+       *ngIf="range">
+  </div>
+  <div *ngFor="let tick of ticks"
+       class="my-slider-control-tick"
+       [class.my-slider-control-tick-checked]="tick.checked"
+       [class.my-slider-control-tick-selected]="tick.selected"
+       [style.left]="tick.pos"
+       [attr.data-slider-value]="tick.value"
+       (click)="onTickClick(tick.value)">
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,11 @@
+@import "../../../../styles/colors";
+
+:host {
+  font-size: 18px;
+  line-height: 23px;
+  color: $ezy-gray-darkest;
+}
+
+.my-toggle {
+  margin-bottom: 1rem;
+}

@@ -1,9 +1,10 @@
-import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'ezy-filters-button',
   templateUrl: './filters-button.component.html',
-  styleUrls: ['./filters-button.component.scss']
+  styleUrls: ['./filters-button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FiltersButtonComponent {
 

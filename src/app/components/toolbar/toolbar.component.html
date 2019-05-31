@@ -1,13 +1,22 @@
 <header>
   <div class="ezy-logo"></div>
-  <ezy-filters-button #filterButton>Filters</ezy-filters-button>
+  <ezy-filters-button [active]="panelExpanded"
+                      (activated)="changePanelState($event)">
+    Filters
+  </ezy-filters-button>
 </header>
-<my-accordion [expanded]="filterButton.active"
+<my-accordion [expanded]="panelExpanded"
               [animationTime]="300"
               timingFunction="ease-out">
   <section>
     <div class="ezy-toolbar">
-      <div class="ezy-toolbar-controls">yjytyjtjt</div>
+      <div class="ezy-toolbar-controls">
+       <ezy-num-cards-chooser></ezy-num-cards-chooser>
+       <ezy-refresh-interval-chooser></ezy-refresh-interval-chooser>
+       <span class="ezy-close-button"
+             (click)="changePanelState(false)">
+       </span>
+      </div>
     </div>
   </section>
 </my-accordion>

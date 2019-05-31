@@ -1,0 +1,132 @@
+@import "slider.variables";
+
+:host {
+  display: inline-block;
+  line-height: 0;
+  width: $my-slider-default-width;
+  min-width: $my-slider-min-width;
+  padding: $my-slider-padding;
+  font-size: 18px;
+  line-height: 23px;
+  color: $ezy-gray-darkest;
+}
+
+.my-slider {
+
+  &-control {
+    display: block;
+    position: relative;
+    height: $my-slider-control-height;
+
+    &-track {
+      position: absolute;
+      left: $my-slider-control-track-padding;
+      right: $my-slider-control-track-padding;
+      top: 50%;
+      transform: translateY(-50%);
+      border: $my-slider-control-track-border;
+
+      &-selected {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: $my-slider-control-track-selected;
+      }
+    }
+
+    &-thumb {
+      cursor: pointer;
+      position: absolute;
+      border-radius: 50%;
+      background: $my-slider-control-track-thumb-color;
+      width: $my-slider-control-track-thumb-size;
+      height: $my-slider-control-track-thumb-size;
+      transform: translate( -50%, -50% );
+      top: 50%;
+      z-index: 10;
+
+      transition: width $my-slider-control-track-thumb-hover-transition,
+                  height $my-slider-control-track-thumb-hover-transition;
+
+      &:hover, &:active {
+        width: $my-slider-control-track-thumb-hover-size;
+        height: $my-slider-control-track-thumb-hover-size;
+      }
+
+      &-disabled {
+        cursor: default;
+        pointer-events: none;
+        background: $my-slider-disabled-color;
+      }
+    }
+
+    &-tick {
+      cursor: pointer;
+      position: absolute;
+      border-radius: 50%;
+      background: $ezy-gray-lightest;
+      width: 6px;
+      height: 6px;
+      transform: translate( -50%, -50% );
+      top: 50%;
+
+      &:before {
+        content: attr(data-slider-value);
+        position: absolute;
+        top: calc( -1em - 0.5rem );
+        transform: translateX( -38% );
+      }
+
+      &-checked {
+        background: $my-slider-control-track-thumb-color;
+      }
+
+      &-selected {
+        &:before {
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 27px;
+          transform: translateX( -40% );
+        }
+      }
+    }
+  }
+
+  &-labels {
+
+    &-scale {
+      display: flex;
+      justify-content: space-between;
+      color: $my-slider-labels-scale-color;
+      font-size: $my-slider-labels-scale-font-size;
+      line-height: $my-slider-labels-scale-line-height;
+      margin: 0 $my-slider-control-track-padding;
+    }
+
+    &-name {
+      color: $my-slider-labels-name-color;
+      font-size: $my-slider-labels-font-size;
+      font-weight: $my-slider-labels-font-weight;
+      line-height: $my-slider-labels-line-height;
+      margin: 0 $my-slider-control-track-padding $my-slider-labels-name-margin-bottom $my-slider-control-track-padding;
+    }
+
+    &-value {
+      color: $my-slider-labels-value-color;
+      font-size: $my-slider-labels-value-font-size;
+      line-height: $my-slider-labels-value-line-height;
+      margin: 0 $my-slider-control-track-padding $my-slider-labels-value-margin-bottom $my-slider-control-track-padding;
+    }
+
+    &-emphasized {
+      color: $my-slider-labels-emphasized-color;
+      font-size: $my-slider-labels-emphasized-font-size;
+      line-height: $my-slider-labels-emphasized-line-height;
+      font-weight: $my-slider-labels-emphasized-font-weight;
+    }
+
+    &-disabled {
+      color: $my-slider-disabled-color;
+    }
+  }
+}

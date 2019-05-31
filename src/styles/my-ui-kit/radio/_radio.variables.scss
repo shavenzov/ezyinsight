@@ -1,0 +1,31 @@
+@import "../../colors";
+
+$my-radio-spacer-y: 0.5rem;
+$my-radio-spacer-x: 1rem;
+
+$my-radio-size: 1.25rem;
+$my-radio-bg-color: $ezy-white;
+$my-radio-border-width: 1px;
+$my-radio-border-color: $ezy-gray-darkest;
+$my-radio-transition: 200ms linear;
+
+// Indicator
+$my-radio-indicator-size: 0.5rem;
+$my-radio-indicator-color: $ezy-gray-darkest;
+
+// Label
+$my-radio-label-font-size: 18px;
+$my-radio-label-line-height: 1.4375rem;
+$my-radio-label-padding: 0.75rem;
+
+// Focus & hover state
+$my-radio-focus-hover-color: $ezy-gray-darkest;
+
+// Active state
+$my-radio-active-color: $ezy-gray-darkest;
+
+// Checked state
+$my-radio-checked-color: $ezy-gray-darkest;
+
+// Disabled state
+$my-radio-disabled-color: $ezy-gray;

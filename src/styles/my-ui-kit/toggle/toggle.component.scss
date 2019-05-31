@@ -1,0 +1,133 @@
+@import "./toggle.variables";
+
+.my-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  & + & {
+    margin-top: $my-toggle-spacer-y;
+  }
+
+  &-inline {
+    display: inline-flex;
+
+    & + & {
+      margin-top: 0;
+      margin-left: $my-toggle-spacer-x;
+    }
+  }
+
+  &-input {
+    position: absolute;
+    z-index: -1; // Put the input behind the label so it doesn't overlay text
+    opacity: 0;
+  }
+
+  &-label {
+    margin-bottom: 0;
+    padding-left: $my-toggle-width + $my-toggle-label-padding;
+
+    font-size: $my-toggle-label-font-size;
+    line-height: $my-toggle-label-line-height;
+    cursor: pointer;
+
+    &:empty {
+      min-width: $my-toggle-width;
+      min-height: $my-toggle-label-line-height;
+      padding-left: 0;
+    }
+
+    &-left {
+      padding-left: 0;
+      padding-right: $my-toggle-width + $my-toggle-label-padding;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: ($my-toggle-label-line-height - $my-toggle-height) / 2;
+      left: 0;
+
+      box-sizing: border-box;
+      width: $my-toggle-width;
+      height: $my-toggle-height;
+
+      background-color: $my-toggle-bg-color;
+      border-radius: $my-toggle-height;
+
+      transition: background-color $my-toggle-transition;
+    }
+
+    &-left::before {
+      left: auto;
+      right: 0;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: ($my-toggle-label-line-height - $my-toggle-indicator-size) / 2;
+      left: 0;
+
+      display: block;
+      width: $my-toggle-indicator-size;
+      height: $my-toggle-indicator-size;
+
+      background-color: $my-toggle-indicator-color;
+      border-radius: 50%;
+      box-shadow: $my-toggle-indicator-shadow;
+
+      transition: background-color $my-toggle-transition, transform $my-toggle-transition;
+      will-change: transform;
+    }
+
+    &-left::after {
+      left: auto;
+      right: $my-toggle-width - $my-toggle-indicator-size;
+    }
+  }
+
+  &-input:focus + &-label,
+  &-input:hover + &-label {
+    &::after {
+      background-color: $my-toggle-focus-hover-indicator-color;
+    }
+  }
+
+  &-input:checked + &-label {
+    &::before {
+      background-color: $my-toggle-checked-bg-color;
+    }
+
+    &::after {
+      transform: translateX($my-toggle-width - $my-toggle-indicator-size);
+      background-color: $my-toggle-checked-indicator-color;
+    }
+  }
+
+  &-input:checked:focus + &-label,
+  &-input:checked:hover + &-label {
+    &::after {
+      background-color: $my-toggle-focus-hover-checked-indicator-color;
+    }
+  }
+
+  &-input:disabled + &-label {
+    cursor: not-allowed;
+    color: $my-toggle-disabled-color;
+
+    &::before {
+      background-color: $my-toggle-disabled-bg-color;
+    }
+  }
+
+  &-input:disabled + &-label::after,
+  &-input:disabled:checked + &-label::after {
+    background-color: $my-toggle-disabled-indicator-color;
+    box-shadow: none;
+  ;
+  }
+}

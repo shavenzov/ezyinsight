@@ -1,0 +1,33 @@
+@import "../../colors";
+
+
+$my-toggle-spacer-y: 0.5rem;
+$my-toggle-spacer-x: 1rem;
+
+$my-toggle-width: 40px;
+$my-toggle-height: 16px;
+$my-toggle-bg-color: $ezy-gray-light;
+$my-toggle-transition: 150ms linear;
+
+// Indicator
+$my-toggle-indicator-size: 20px;
+$my-toggle-indicator-color: $ezy-white;
+$my-toggle-indicator-shadow: 0 0 5px $ezy-gray-darkest;
+
+// Label
+$my-toggle-label-font-size: 18px;
+$my-toggle-label-line-height: 23px;
+$my-toggle-label-padding: 8px;
+
+// Focus & hover state
+$my-toggle-focus-hover-indicator-color: $ezy-gray-lightest;
+$my-toggle-focus-hover-checked-indicator-color: $ezy-blue;
+
+// Checked state
+$my-toggle-checked-bg-color: $ezy-blue;
+$my-toggle-checked-indicator-color: $ezy-blue;
+
+// Disabled state
+$my-toggle-disabled-color: $ezy-gray;
+$my-toggle-disabled-bg-color: $ezy-gray-light;
+$my-toggle-disabled-indicator-color: $ezy-gray;

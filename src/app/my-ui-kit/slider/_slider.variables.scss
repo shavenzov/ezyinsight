@@ -1,0 +1,48 @@
+@import "../../../styles/colors";
+
+
+// Slider container
+$my-slider-padding: calc( 0.5rem + 1em ) 0.5rem 0.5rem 0.5rem;
+$my-slider-default-width: 12.5rem; // 200px
+$my-slider-min-width: 12.5rem; // 100px
+
+// Slider control container
+$my-slider-control-height: 1rem;
+
+// Slider control track
+$my-slider-control-track-padding: 0.5rem;
+$my-slider-control-track-border: 1px solid $ezy-gray-lightest;
+$my-slider-control-track-selected: 1px solid $ezy-blue;
+
+// Slider control thumb
+$my-slider-control-track-thumb-color: $ezy-blue;
+$my-slider-control-track-thumb-size: 0.75rem;
+$my-slider-control-track-thumb-hover-size: 1rem;
+$my-slider-control-track-thumb-hover-transition: 150ms ease-in-out;
+
+// Slider labels "scale"
+$my-slider-labels-scale-color: gray;
+$my-slider-labels-scale-font-size: 14px;
+$my-slider-labels-scale-line-height: 17px;
+
+// Slider labels "name"
+$my-slider-labels-name-color: gray;
+$my-slider-labels-font-size: 14px;
+$my-slider-labels-font-weight: bold;
+$my-slider-labels-line-height: 17px;
+$my-slider-labels-name-margin-bottom: 0.25rem;
+
+// Slider labels "value"
+$my-slider-labels-value-color: gray;
+$my-slider-labels-value-font-size: 14px;
+$my-slider-labels-value-line-height: 17px;
+$my-slider-labels-value-margin-bottom: 0.5rem;
+
+// "Emphasized" label text
+$my-slider-labels-emphasized-color: blue;
+$my-slider-labels-emphasized-font-size: 14px;
+$my-slider-labels-emphasized-line-height: 17px;
+$my-slider-labels-emphasized-font-weight: bold;
+
+// Disabled state
+$my-slider-disabled-color: gray;

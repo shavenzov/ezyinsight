@@ -1,0 +1,5 @@
+<label>Number of cards</label>
+<div *ngFor="let option of options; let i = index;" class="my-radio">
+  <input class="my-radio-input" type="radio" id="radio-{{i}}" name="num-cards" [checked]="i === optionIndex">
+  <label class="my-radio-label" for="radio-{{i}}">{{option}}</label>
+</div>

@@ -1,0 +1,106 @@
+@import "radio.variables";
+
+.my-radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  & + & {
+    margin-top: $my-radio-spacer-y;
+  }
+
+  &-inline {
+    display: inline-flex;
+
+    & + & {
+      margin-top: 0;
+      margin-left: $my-radio-spacer-x;
+    }
+  }
+
+  &-input {
+    position: absolute;
+    z-index: -1; // Put the input behind the label so it doesn't overlay text
+    opacity: 0;
+  }
+
+  &-label {
+    margin-bottom: 0;
+    padding-left: $my-radio-size + $my-radio-label-padding;
+
+    font-size: $my-radio-label-font-size;
+    line-height: $my-radio-label-line-height;
+    cursor: pointer;
+
+    &:empty {
+      min-width: $my-radio-size;
+      min-height: $my-radio-label-line-height;
+      padding-left: 0;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: ($my-radio-label-line-height - $my-radio-size) / 2;
+      left: 0;
+
+      box-sizing: border-box;
+      width: $my-radio-size;
+      height: $my-radio-size;
+
+      background-color: $my-radio-bg-color;
+      border: $my-radio-border-width solid $my-radio-border-color;
+      border-radius: 50%;
+
+      transition: border-color $my-radio-transition;
+    }
+  }
+
+  &-input:checked + &-label {
+    color: $my-radio-checked-color;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: ($my-radio-label-line-height - $my-radio-indicator-size) / 2;
+      left: ($my-radio-size - $my-radio-indicator-size) / 2;
+
+      display: block;
+      width: $my-radio-indicator-size;
+      height: $my-radio-indicator-size;
+
+      background-color: $my-radio-indicator-color;
+      border-radius: 50%;
+    }
+  }
+
+  &-input:focus + &-label::before,
+  &-input:hover + &-label::before {
+    border-color: $my-radio-focus-hover-color;
+  }
+
+  &-input:active + &-label {
+    &::before {
+      border-color: $my-radio-active-color;
+    }
+
+    &::after {
+      background-color: $my-radio-active-color;
+    }
+  }
+
+  &-input:disabled + &-label {
+    cursor: not-allowed;
+    color: $my-radio-disabled-color;
+
+    &::before {
+      border-color: $my-radio-disabled-color;
+    }
+  }
+
+  &-input:disabled:checked + &-label::after {
+    background-color: $my-radio-disabled-color;
+  }
+}

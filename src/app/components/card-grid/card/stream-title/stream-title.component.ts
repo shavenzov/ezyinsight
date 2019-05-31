@@ -1,9 +1,10 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ezy-stream-title',
   templateUrl: './stream-title.component.html',
-  styleUrls: ['./stream-title.component.scss']
+  styleUrls: ['./stream-title.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StreamTitleComponent {
 

@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'ezy-card-grid',
   templateUrl: './card-grid.component.html',
-  styleUrls: ['./card-grid.component.scss']
+  styleUrls: ['./card-grid.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardGridComponent implements OnInit {
+export class CardGridComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
