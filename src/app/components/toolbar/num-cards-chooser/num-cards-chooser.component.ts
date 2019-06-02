@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'ezy-num-cards-chooser',
@@ -6,9 +6,19 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   styleUrls: ['./num-cards-chooser.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NumCardsChooserComponent  {
+export class NumCardsChooserComponent {
 
+ @Input()
  options: number[] = [ 10, 20, 30 ];
- optionIndex = 1;
+
+ @Input()
+ selection = 20;
+
+ @Output()
+ selectionChange: EventEmitter<number> = new EventEmitter();
+
+ onChange(): void {
+  this.selectionChange.emit( this.selection );
+ }
 
 }

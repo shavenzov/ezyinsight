@@ -10,11 +10,13 @@
               timingFunction="ease-out">
   <section>
     <div class="ezy-toolbar">
-      <div class="ezy-toolbar-controls">
-       <ezy-num-cards-chooser></ezy-num-cards-chooser>
-       <ezy-refresh-interval-chooser></ezy-refresh-interval-chooser>
-       <span class="ezy-close-button"
-             (click)="changePanelState(false)">
+       <div class="ezy-toolbar-num-card-chooser-container">
+         <ezy-num-cards-chooser></ezy-num-cards-chooser>
+         <ezy-refresh-interval-chooser></ezy-refresh-interval-chooser>
+       </div>
+      <div class="ezy-toolbar-close-button-container">
+        <span class="ezy-close-button"
+              (click)="changePanelState(false)">
        </span>
       </div>
     </div>

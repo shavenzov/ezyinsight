@@ -9,21 +9,18 @@
     display: grid;
     grid-row-gap: 57px;
     grid-column-gap: 63px;
-
-    @media all and ( max-width: 1920px ) {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
+    grid-template-columns: repeat( 5, 1fr );
 
     @media all and ( max-width: 1900px ) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat( 4, 1fr );
     }
 
     @media all and ( max-width: 1520px ) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat( 3, 1fr );
     }
 
     @media all and ( max-width: 1120px ) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat( 2, 1fr );
     }
 
     @media all and ( max-width: 720px ) {

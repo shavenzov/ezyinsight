@@ -10,8 +10,11 @@ import {CardGridComponent} from './components/card-grid/card-grid.component';
 import {FiltersButtonComponent} from './components/toolbar/filters-button/filters-button.component';
 import {MyAccordionModule} from './my-ui-kit/accordion/accordion.module';
 import {MySliderModule} from './my-ui-kit/slider/slider.module';
-import { NumCardsChooserComponent } from './components/toolbar/num-cards-chooser/num-cards-chooser.component';
-import { RefreshIntervalChooserComponent } from './components/toolbar/refresh-interval-chooser/refresh-interval-chooser.component';
+import {NumCardsChooserComponent} from './components/toolbar/num-cards-chooser/num-cards-chooser.component';
+import {RefreshIntervalChooserComponent} from './components/toolbar/refresh-interval-chooser/refresh-interval-chooser.component';
+import {FormsModule} from '@angular/forms';
+import {EzyinsightService} from './services/ezyinsight.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,14 @@ import { RefreshIntervalChooserComponent } from './components/toolbar/refresh-in
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     MyAccordionModule,
     MySliderModule
+  ],
+  providers: [
+    EzyinsightService
   ],
   bootstrap: [AppComponent]
 })

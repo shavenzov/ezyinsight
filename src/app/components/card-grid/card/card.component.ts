@@ -12,7 +12,7 @@ export class CardComponent {
    * News image url
    */
   @Input()
-  imageUrl;
+  pictureUrl;
 
   /**
    * Stream source logo url
@@ -30,6 +30,6 @@ export class CardComponent {
    * News title text
    */
   @Input()
-  header;
+  headline;
 
 }

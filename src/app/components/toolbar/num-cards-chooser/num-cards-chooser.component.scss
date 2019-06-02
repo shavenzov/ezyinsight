@@ -1,12 +1,8 @@
 @import "../../../../styles/colors";
 
-:host {
-  font-size: 18px;
-  line-height: 23px;
-  color: $ezy-gray-darkest;
-
-  label, .my-radio {
+label, .my-radio {
     display: block;
     margin-bottom: 1rem;
-  }
+    white-space: nowrap;
 }
+

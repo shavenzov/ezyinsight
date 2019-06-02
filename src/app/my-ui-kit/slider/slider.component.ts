@@ -405,7 +405,7 @@ export class MySliderComponent implements ControlValueAccessor, AfterViewInit, O
   }
 
   onTickClick( value: number ): void {
-    this.setValue( value, true );
+    this.setValue( value, false );
   }
 
   private updateTicks(): void {

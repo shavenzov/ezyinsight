@@ -1,11 +1,34 @@
 @import "../../../../styles/colors";
 
-:host {
-  font-size: 18px;
-  line-height: 23px;
-  color: $ezy-gray-darkest;
+@keyframes ezy-refreshing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .my-toggle {
   margin-bottom: 1rem;
 }
+
+.ezy {
+  &-refresh-button {
+    display: flex;
+    justify-content: center;
+    fill: $ezy-gray-darkest;
+    cursor: pointer;
+    margin-left: 16px;
+
+    &:hover {
+      fill: $ezy-blue;
+    }
+
+    &-refreshing {
+      animation: ezy-refreshing 1s linear infinite;
+    }
+  }
+}
+
+

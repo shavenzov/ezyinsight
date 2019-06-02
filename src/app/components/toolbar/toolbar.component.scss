@@ -19,6 +19,7 @@ header {
   box-shadow: 0px 2px 4px $ezy-gray-light;
   padding: 0 25px;
   z-index: $ezy-toolbar-z-index + 1;
+  box-sizing: border-box;
 }
 
 // logo width
@@ -27,6 +28,8 @@ $ezy-logo-width: 205px;
 $ezy-logo-height: 46px;
 // gap between logo and "REALTIME" label
 $ezy-logo-margin-bottom: 6px;
+// Toolbar mobile view resolution
+$ezy-toolbar-mobile-width: 600px;
 
 .ezy {
 
@@ -59,14 +62,35 @@ $ezy-logo-margin-bottom: 6px;
 
   &-toolbar {
     display: flex;
-    justify-content: flex-end;
     background: $ezy-white;
     height: 245px;
+    box-sizing: border-box;
     width: 100%;
+    padding: 28px 21px;
+    font-size: 18px;
+    line-height: 23px;
+    color: $ezy-gray-darkest;
 
-    &-controls {
-      margin: 28px 21px;
-      //background: orange;
+    @media all and ( max-width: $ezy-toolbar-mobile-width ) {
+      height: 350px;
+    }
+
+    &-num-card-chooser-container {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 2;
+      max-width: 700px;
+
+      @media all and ( max-width: $ezy-toolbar-mobile-width ) {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+    }
+
+    &-close-button-container {
+      position: relative;
+      flex-grow: 1;
+      margin-left: 128px;
     }
   }
 
@@ -74,7 +98,7 @@ $ezy-logo-margin-bottom: 6px;
     position: absolute;
     cursor: pointer;
     right: 21px;
-    top: 21px;
+    top: 0;
     width: 21px;
     height: 21px;
 
@@ -82,8 +106,8 @@ $ezy-logo-margin-bottom: 6px;
       position: absolute;
       left: 10px;
       content: ' ';
-      height: 21px;
-      width: 1px;
+      height: 30px;
+      width: 2px;
       background-color: $ezy-gray-darkest;
     }
 
@@ -99,6 +123,14 @@ $ezy-logo-margin-bottom: 6px;
 
 ezy-filters-button {
   margin-left: 36px;
+}
+
+ezy-num-cards-chooser {
+  margin-right: 95px;
+
+  @media all and ( max-width: $ezy-toolbar-mobile-width ) {
+    margin-bottom: 2rem;
+  }
 }
 
 
