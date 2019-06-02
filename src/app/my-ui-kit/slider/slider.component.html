@@ -12,8 +12,9 @@
   </div>
   <div *ngFor="let tick of ticks"
        class="my-slider-control-tick"
-       [class.my-slider-control-tick-checked]="tick.checked"
+       [class.my-slider-control-tick-checked]="tick.checked && !disabled"
        [class.my-slider-control-tick-selected]="tick.selected"
+       [class.my-slider-control-tick-disabled]="disabled"
        [style.left]="tick.pos"
        [attr.data-slider-value]="tick.value"
        (click)="onTickClick(tick.value)">

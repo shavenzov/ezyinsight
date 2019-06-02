@@ -23,6 +23,7 @@
 <my-slider [min]="minInterval"
            [max]="maxInterval"
            [step]="step"
+           [disabled]="!autoRefresh"
            [(ngModel)]="refreshInterval"
            [ngModelOptions]="{standalone: true}"
            (input)="onIntervalInput($event)" >

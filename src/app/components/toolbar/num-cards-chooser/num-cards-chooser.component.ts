@@ -9,10 +9,10 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
 export class NumCardsChooserComponent {
 
  @Input()
- options: number[] = [ 10, 20, 30 ];
+ options: number[] = [ 6, 8, 10 ];
 
  @Input()
- selection = 20;
+ selection = 8;
 
  @Output()
  selectionChange: EventEmitter<number> = new EventEmitter();

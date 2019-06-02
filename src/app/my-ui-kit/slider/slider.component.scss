@@ -81,6 +81,15 @@
         background: $my-slider-control-track-thumb-color;
       }
 
+      &-disabled {
+        pointer-events: none;
+        cursor: default;
+
+        &:before {
+          color: $ezy-gray-lightest;
+        }
+      }
+
       &-selected {
         &:before {
           font-weight: bold;

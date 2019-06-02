@@ -10,7 +10,8 @@
               timingFunction="ease-out">
   <section>
     <div class="ezy-toolbar">
-       <div class="ezy-toolbar-num-card-chooser-container">
+       <div *ngIf="panelExpanded"
+            class="ezy-toolbar-num-card-chooser-container">
          <ezy-num-cards-chooser></ezy-num-cards-chooser>
          <ezy-refresh-interval-chooser></ezy-refresh-interval-chooser>
        </div>

@@ -7,9 +7,7 @@ import {Component} from '@angular/core';
 })
 export class ToolbarComponent {
 
-  panelExpanded = true;
-
-
+  panelExpanded = false;
 
   changePanelState( value: boolean ): void {
     this.panelExpanded = value;

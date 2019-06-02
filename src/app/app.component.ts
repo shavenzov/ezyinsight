@@ -17,6 +17,14 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.stories = this.ezyServise.getStories( 30 );
+    //this.stories = this.ezyServise.getStoriesStream( 10, 15000 );
+    this.ezyServise.refreshing.subscribe( ( refreshing ) => {
+      console.log( 'refreshing', refreshing );
+    } );
+  }
+
+  onClick(): void {
+    console.log( 'click' );
+    this.stories = this.ezyServise.getStoriesStream( 10, 5000 );
   }
 }
