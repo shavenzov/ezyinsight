@@ -46,14 +46,9 @@ export function appReducer( state: any = initialState, action: AppActions ): any
       return {
         ...state,
         refreshing: false,
+        // if we already have stories in state, prevent to write empty value
         stories: action.payload ? action.payload : state.stories
       };
-
-    /*case StoriesStreamChangedAction.actionType:
-      return {
-        ...state,
-        stories: action.payload
-      };*/
 
     default:
       return state;

@@ -46,15 +46,7 @@ export class StoriesRefreshEndAction implements Action {
   ) {}
 }
 
-/*export class StoriesStreamChangedAction implements Action {
-  static readonly actionType = 'StoriesStreamChanged';
-  readonly type = StoriesStreamChangedAction.actionType;
-
-
-}*/
-
 export type AppActions = ToolbarToggleAction |
                          ParamsChangedAction |
                          StoriesRefreshStartAction |
-                         StoriesRefreshEndAction /*|
-                         StoriesStreamChangedAction*/;
+                         StoriesRefreshEndAction;
