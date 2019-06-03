@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import {Observable, Subject, timer} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 import {EzyStoriesResultModel, EzyStoryModel} from './models/story.model';
 import {HttpClient} from '@angular/common/http';
-import {map, switchMap, tap} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class EzyinsightService {

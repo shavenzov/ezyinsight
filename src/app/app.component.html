@@ -1,6 +1,6 @@
 <ezy-toolbar></ezy-toolbar>
-<ezy-card-grid (click)="onClick()">
-  <ezy-card *ngFor="let story of (appState|async).stories|async"
+<ezy-card-grid>
+  <ezy-card *ngFor="let story of (appState|async).stories"
             [pictureUrl]="story.pictureUrl"
             [streamLogoUrl]="story.streamLogoUrl"
             [streamName]="story.streamName"

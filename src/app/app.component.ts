@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
-import {AppState, ParamsChangedAction} from './store/app.actions';
-import {initialState} from './store/app.reducers';
+import {AppState} from './store/app.actions';
 
 @Component({
   selector: 'ezy-root',
@@ -19,9 +18,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.appState = this.store.select( 'appStore' );
-  }
-
-  onClick(): void {
-
   }
 }

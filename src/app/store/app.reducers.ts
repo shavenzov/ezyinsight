@@ -4,7 +4,7 @@ import {
   ParamsChangedAction,
   StoriesRefreshEndAction,
   StoriesRefreshStartAction,
-  StoriesStreamChangedAction, ToolbarToggleAction
+  ToolbarToggleAction
 } from './app.actions';
 
 export const initialState: AppState = {
@@ -45,14 +45,15 @@ export function appReducer( state: any = initialState, action: AppActions ): any
     case StoriesRefreshEndAction.actionType:
       return {
         ...state,
-        refreshing: false
+        refreshing: false,
+        stories: action.payload ? action.payload : state.stories
       };
 
-    case StoriesStreamChangedAction.actionType:
+    /*case StoriesStreamChangedAction.actionType:
       return {
         ...state,
         stories: action.payload
-      };
+      };*/
 
     default:
       return state;

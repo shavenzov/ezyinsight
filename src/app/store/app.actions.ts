@@ -1,4 +1,3 @@
-import {Observable} from 'rxjs';
 import {EzyStoryModel} from '../services/models/story.model';
 import {Action} from '@ngrx/store';
 
@@ -9,7 +8,7 @@ export type AppParams = {
 };
 
 export type AppState = {
-  stories: Observable<EzyStoryModel[]>;
+  stories: EzyStoryModel[];
   refreshing: boolean;
   toolbarExpanded: boolean;
   params: AppParams;
@@ -41,19 +40,21 @@ export class StoriesRefreshStartAction implements Action {
 export class StoriesRefreshEndAction implements Action {
   static readonly actionType = 'StoriesRefreshEnd';
   readonly type = StoriesRefreshEndAction.actionType;
+
+  constructor(
+    public payload: EzyStoryModel[]
+  ) {}
 }
 
-export class StoriesStreamChangedAction implements Action {
+/*export class StoriesStreamChangedAction implements Action {
   static readonly actionType = 'StoriesStreamChanged';
   readonly type = StoriesStreamChangedAction.actionType;
 
-  constructor(
-    public payload: Observable<EzyStoryModel[]>
-  ) {}
-}
+
+}*/
 
 export type AppActions = ToolbarToggleAction |
                          ParamsChangedAction |
                          StoriesRefreshStartAction |
-                         StoriesRefreshEndAction |
-                         StoriesStreamChangedAction;
+                         StoriesRefreshEndAction /*|
+                         StoriesStreamChangedAction*/;
