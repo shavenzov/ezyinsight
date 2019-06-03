@@ -10,19 +10,9 @@ export class EzyinsightService {
   private readonly root = '//app.ezyinsights.com/api/';
   private readonly storiesEndpoint = 'filter/17887/public/stories';
 
-  refreshing: Subject<boolean> = new Subject();
-
   constructor(
     private http: HttpClient
   ) {}
-
-  getStoriesStream( limit: number, refreshInterval: number ): Observable<EzyStoryModel[]> {
-    return timer( 0, refreshInterval ).pipe(
-     tap( (v) => this.refreshing.next(true) ),
-     switchMap( () => this.getStories( limit ) ),
-     tap( (v) => this.refreshing.next(false) )
-    );
-  }
 
   getStories( limit: number ): Observable<EzyStoryModel[]> {
     return this.http.get<EzyStoriesResultModel>( `${this.root}${this.storiesEndpoint}?limit=${limit}` ).pipe(

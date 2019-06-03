@@ -15,10 +15,11 @@ export class NumCardsChooserComponent {
  selection = 8;
 
  @Output()
- selectionChange: EventEmitter<number> = new EventEmitter();
+ paramsChange: EventEmitter<void> = new EventEmitter();
 
  onChange(): void {
-  this.selectionChange.emit( this.selection );
+  this.paramsChange.emit();
+  console.log( 'cards' );
  }
 
 }

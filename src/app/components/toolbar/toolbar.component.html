@@ -1,19 +1,27 @@
 <header>
   <div class="ezy-logo"></div>
-  <ezy-filters-button [active]="panelExpanded"
+  <ezy-filters-button [active]="(this.appState|async).toolbarExpanded"
                       (activated)="changePanelState($event)">
     Filters
   </ezy-filters-button>
 </header>
-<my-accordion [expanded]="panelExpanded"
+<my-accordion [expanded]="(this.appState|async).toolbarExpanded"
               [animationTime]="300"
               timingFunction="ease-out">
   <section>
     <div class="ezy-toolbar">
-       <div *ngIf="panelExpanded"
+       <div *ngIf="(this.appState|async).toolbarExpanded"
             class="ezy-toolbar-num-card-chooser-container">
-         <ezy-num-cards-chooser></ezy-num-cards-chooser>
-         <ezy-refresh-interval-chooser></ezy-refresh-interval-chooser>
+         <ezy-num-cards-chooser #cardChooser
+           [selection]="(this.appState|async).params.numCards"
+           (paramsChange)="paramsChanged()">
+         </ezy-num-cards-chooser>
+         <ezy-refresh-interval-chooser #intervalChooser
+           [refreshing]="(this.appState|async).refreshing"
+           [autoRefresh]="(this.appState|async).params.autoRefresh"
+           [refreshInterval]="(this.appState|async).params.interval"
+           (paramsChange)="paramsChanged()">
+         </ezy-refresh-interval-chooser>
        </div>
       <div class="ezy-toolbar-close-button-container">
         <span class="ezy-close-button"

@@ -236,7 +236,7 @@ export class MySliderComponent implements ControlValueAccessor, AfterViewInit, O
     this.stepDigitsAfterComma = (parts.length > 1) ? parts[1].length : 0;
   }
 
-  private setValue(value: MySliderValue, animation: boolean = false): void {
+  private setValue(value: MySliderValue, animation: boolean = false, sendEvent: boolean = true): void {
 
     // while initialization phase just store value
     if (! this.initialized) {
@@ -279,7 +279,7 @@ export class MySliderComponent implements ControlValueAccessor, AfterViewInit, O
       this._value = value;
       this.valueChanged = true;
 
-      if (this.onChange) {
+      if ( sendEvent && this.onChange) {
         if (animation) {
           this.waitAnimationAndEmitOnChange();
         } else {
@@ -771,7 +771,7 @@ export class MySliderComponent implements ControlValueAccessor, AfterViewInit, O
    * ControlValueAccessor interface implementation
    */
   writeValue(value: any): void {
-    this.setValue(value);
+    this.setValue(value, false, false);
   }
 
   registerOnChange(fn: any): void {

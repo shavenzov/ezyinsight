@@ -15,6 +15,10 @@ import {RefreshIntervalChooserComponent} from './components/toolbar/refresh-inte
 import {FormsModule} from '@angular/forms';
 import {EzyinsightService} from './services/ezyinsight.service';
 import {HttpClientModule} from '@angular/common/http';
+import {StoreModule} from '@ngrx/store';
+import {appReducer} from './store/app.reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {StoriesEffects} from './store/app.effects';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    StoreModule.forRoot( {appStore: appReducer} ),
+    EffectsModule.forRoot( [StoriesEffects] ),
     AppRoutingModule,
     MyAccordionModule,
     MySliderModule

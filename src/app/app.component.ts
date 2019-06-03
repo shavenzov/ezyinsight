@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {EzyinsightService} from './services/ezyinsight.service';
 import {Observable} from 'rxjs';
-import {EzyStoryModel} from './services/models/story.model';
+import {Store} from '@ngrx/store';
+import {AppState, ParamsChangedAction} from './store/app.actions';
+import {initialState} from './store/app.reducers';
 
 @Component({
   selector: 'ezy-root',
@@ -10,21 +11,17 @@ import {EzyStoryModel} from './services/models/story.model';
 })
 export class AppComponent implements OnInit {
 
-  stories: Observable<EzyStoryModel[]>;
+  appState: Observable<AppState>;
 
   constructor(
-    private ezyServise: EzyinsightService
+    private store: Store<AppState>,
   ) {}
 
   ngOnInit(): void {
-    //this.stories = this.ezyServise.getStoriesStream( 10, 15000 );
-    this.ezyServise.refreshing.subscribe( ( refreshing ) => {
-      console.log( 'refreshing', refreshing );
-    } );
+    this.appState = this.store.select( 'appStore' );
   }
 
   onClick(): void {
-    console.log( 'click' );
-    this.stories = this.ezyServise.getStoriesStream( 10, 5000 );
+
   }
 }

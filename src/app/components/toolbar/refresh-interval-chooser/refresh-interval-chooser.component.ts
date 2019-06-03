@@ -27,24 +27,18 @@ export class RefreshIntervalChooserComponent {
   step = 15;
 
   @Output()
-  intervalChanged: EventEmitter<number> = new EventEmitter();
+  paramsChange: EventEmitter<void> = new EventEmitter();
 
   @Output()
-  autoRefreshChanged: EventEmitter<boolean> = new EventEmitter();
+  refreshClick: EventEmitter<void> = new EventEmitter();
 
-  @Output()
-  refreshButtonClick: EventEmitter<void> = new EventEmitter();
-
-  onIntervalInput( value: MySliderValue ): void {
-    this.intervalChanged.emit(  value as number );
+  paramChanged(): void {
+    this.paramsChange.emit();
+    console.log('interval');
   }
 
-  onAutoRefreshChanged(): void {
-    this.autoRefreshChanged.emit( this.autoRefresh );
-  }
-
-  onRefreshButtonClick(): void {
-    this.refreshButtonClick.emit();
+  refreshButtonClick(): void {
+    this.refreshClick.emit();
   }
 
 }
