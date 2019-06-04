@@ -20,8 +20,6 @@ export const initialState: AppState = {
 
 export function appReducer( state: any = initialState, action: AppActions ): any {
 
-  console.log( 'action', action, state );
-
   switch ( action.type ) {
 
     case ToolbarToggleAction.actionType:

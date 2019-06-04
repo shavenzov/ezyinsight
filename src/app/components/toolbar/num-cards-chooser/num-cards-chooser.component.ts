@@ -19,7 +19,6 @@ export class NumCardsChooserComponent {
 
  onChange(): void {
   this.paramsChange.emit();
-  console.log( 'cards' );
  }
 
 }
