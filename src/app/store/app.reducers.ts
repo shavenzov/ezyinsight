@@ -13,7 +13,7 @@ export const initialState: AppState = {
   toolbarExpanded: false,
   params: {
     numCards: 8,
-    autoRefresh: true,
+    autoRefresh: false,
     interval: 30
   }
 }
@@ -46,8 +46,7 @@ export function appReducer( state: any = initialState, action: AppActions ): any
       return {
         ...state,
         refreshing: false,
-        // if we already have stories in state, prevent to write empty value
-        stories: action.payload ? action.payload : state.stories
+        stories: action.payload
       };
 
     default:

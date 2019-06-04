@@ -32,6 +32,16 @@ export class ParamsChangedAction implements Action {
   ) {}
 }
 
+export class StoriesTimerStartAction implements Action {
+  static readonly actionType = 'StoriesTimerStart';
+  readonly type = StoriesTimerStartAction.actionType;
+}
+
+export class StoriesTimerStopAction implements Action {
+  static readonly actionType = 'StoriesTimerStop';
+  readonly type = StoriesTimerStopAction.actionType;
+}
+
 export class StoriesRefreshStartAction implements Action {
   static readonly actionType = 'StoriesRefreshStart';
   readonly type = StoriesRefreshStartAction.actionType;
@@ -48,5 +58,7 @@ export class StoriesRefreshEndAction implements Action {
 
 export type AppActions = ToolbarToggleAction |
                          ParamsChangedAction |
+                         StoriesTimerStartAction |
+                         StoriesTimerStopAction |
                          StoriesRefreshStartAction |
                          StoriesRefreshEndAction;

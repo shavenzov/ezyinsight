@@ -1,5 +1,4 @@
-import {Component, Input, EventEmitter, Output} from '@angular/core';
-import {MySliderValue} from '../../../my-ui-kit/slider/slider.types';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'ezy-refresh-interval-chooser',
@@ -34,7 +33,6 @@ export class RefreshIntervalChooserComponent {
 
   paramChanged(): void {
     this.paramsChange.emit();
-    console.log('interval');
   }
 
   refreshButtonClick(): void {

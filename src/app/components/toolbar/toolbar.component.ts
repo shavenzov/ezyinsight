@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AppState, ParamsChangedAction, ToolbarToggleAction} from '../../store/app.actions';
+import {AppState, ParamsChangedAction, StoriesRefreshStartAction, ToolbarToggleAction} from '../../store/app.actions';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {NumCardsChooserComponent} from './num-cards-chooser/num-cards-chooser.component';
@@ -38,6 +38,10 @@ export class ToolbarComponent implements OnInit {
       autoRefresh: this.intervalChooser.autoRefresh,
       interval: this.intervalChooser.refreshInterval
    } ) );
+  }
+
+  refreshClick(): void {
+    this.store.dispatch( new StoriesRefreshStartAction() );
   }
 
 }

@@ -3,11 +3,11 @@ import {Observable} from 'rxjs';
 import {EzyStoriesResultModel, EzyStoryModel} from './models/story.model';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class EzyinsightService {
 
-  private readonly root = '//app.ezyinsights.com/api/';
   private readonly storiesEndpoint = 'filter/17887/public/stories';
 
   constructor(
@@ -15,7 +15,7 @@ export class EzyinsightService {
   ) {}
 
   getStories( limit: number ): Observable<EzyStoryModel[]> {
-    return this.http.get<EzyStoriesResultModel>( `${this.root}${this.storiesEndpoint}?limit=${limit}` ).pipe(
+    return this.http.get<EzyStoriesResultModel>( `${environment.root}${this.storiesEndpoint}?limit=${limit}` ).pipe(
       map( data => data.result.map(
         story => {
           const source = story.sources[0];

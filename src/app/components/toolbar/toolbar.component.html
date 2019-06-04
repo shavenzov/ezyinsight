@@ -20,7 +20,8 @@
            [refreshing]="(this.appState|async).refreshing"
            [autoRefresh]="(this.appState|async).params.autoRefresh"
            [refreshInterval]="(this.appState|async).params.interval"
-           (paramsChange)="paramsChanged()">
+           (paramsChange)="paramsChanged()"
+           (refreshClick)="refreshClick()" >
          </ezy-refresh-interval-chooser>
        </div>
       <div class="ezy-toolbar-close-button-container">
