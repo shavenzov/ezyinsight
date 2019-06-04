@@ -13,7 +13,7 @@ export const initialState: AppState = {
   toolbarExpanded: false,
   params: {
     numCards: 8,
-    autoRefresh: false,
+    autoRefresh: true,
     interval: 30
   }
 }
